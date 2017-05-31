@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        
+    </div>
+    <div>
+        <img id="my-elem" src="CatClicker.jpg" alt="Cat Clicker" />
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    document.getElementById("demo").innerHTML = "My First JavaScript in Visual Studio Code";
+    var count = 1;
+    document.getElementById('my-elem')
+        .addEventListener('click', function (event) {
+            document.getElementById("demo").innerHTML = count;
+            count = count + 1;
+        });
+
+</script>
