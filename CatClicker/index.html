@@ -7,23 +7,50 @@
 </head>
 
 <body>
-    <div id="demo">  
-        
+    <div id="demo">
+
     </div>
-    <div>
-        <img id="my-elem" src="CatClicker.jpg" alt="Cat Clicker" />
-    </div>
+    <table>
+        <tr>
+            <td>
+                <div id="demoCat">
+
+                </div>
+                <div id="divCat">
+                    <img id="my-elem" src="CatClicker.jpg" alt="Cat Clicker" />
+                </div>
+            </td>
+            <td>
+                <div id="demoDog">
+
+                </div>
+                <div id="divDog">
+                    <img id="my-elem1" src="DogClicker.jpg" alt="Cat Clicker" />
+                </div>
+            </td>
+        </tr>
+    </table>
+
 </body>
 
 </html>
 
 <script type="text/javascript">
     document.getElementById("demo").innerHTML = "My First JavaScript in Visual Studio Code";
-    var count = 1;
+    document.getElementById("divCat").innerHTML = "CAT" + document.getElementById("divCat").innerHTML;
+    document.getElementById("divDog").innerHTML = "DOG" + document.getElementById("divDog").innerHTML;
+    var countCat = 1;
     document.getElementById('my-elem')
         .addEventListener('click', function (event) {
-            document.getElementById("demo").innerHTML = count;
-            count = count + 1;
+            document.getElementById("demoCat").innerHTML = countCat;
+            countCat = countCat + 1;
+        });
+
+    var countDog = 1;
+    document.getElementById('my-elem1')
+        .addEventListener('click', function (event) {
+            document.getElementById("demoDog").innerHTML = countDog;
+            countDog = countDog + 1;
         });
 
 </script>

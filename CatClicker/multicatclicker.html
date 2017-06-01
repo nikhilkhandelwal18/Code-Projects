@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div id="animalList">
+                </div>
+            </td>
+            <td>
+                <div id="animalCount" />
+                <div id="animalImage">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var pics = ['CatClicker.jpg', 'DogClicker.jpg', 'animal1.jpg', 'animal2.jpg', 'animal3.jpg'];
+
+    for (var i = 0; i < pics.length; i++) {
+        var pic = pics[i];
+
+        //create list
+        var elem = document.createElement('li');
+        elem.innerHTML = pic;
+
+        // ... and when we click, alert the value of `pic`=> copyName
+        elem.addEventListener('click', (function (copyName) {
+            return function () {
+                //alert(copyName);
+                var animalId = copyName.replace('.jpg', '');
+
+                var elemImg = document.createElement('img');
+                elemImg.id = animalId;
+                elemImg.src = copyName;
+                elemImg.alt = copyName;
+
+                var count = 1;
+                elemImg.addEventListener('click', function () {
+                    alert(count);
+                    count = count + 1;
+                });
+
+                document.getElementById("animalImage").innerHTML = '';
+                document.getElementById("animalImage").appendChild(elemImg);
+
+            };
+        })(pic));
+
+        // finally, let's add this element to the document
+        document.getElementById("animalList").appendChild(elem);
+    }
+
+</script>
